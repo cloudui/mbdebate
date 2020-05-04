@@ -4,6 +4,7 @@
 {% block head_title %}{% trans "Confirm E-mail Address" %}{% endblock %}
 
 {% block content %}
+
 <h1>{% trans "Confirm E-mail Address" %}</h1>
     
 {% if confirmation %}
@@ -35,4 +36,5 @@ that <a href="mailto:{{ email }}">{{ email }}</a> is an e-mail address for user
 
 {% endblocktrans %}</p>
 {% endif %}
+
 {% endblock %}

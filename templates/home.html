@@ -5,20 +5,30 @@
 
 {% block title %}Home{% endblock title %}
 
-{% block content %}
-<h1>Homepage</h1>
+{% block home %}
+<div class="jumbotron jumbotron-fluid text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('/static/images/background.png')">
+    <div class="container">
+        <h1 class="display-1">Welcome to Montgomery Blair Debate</h1>
+        
+        <!-- <p class="lead">All your information is here!</p> -->
+        <!-- <hr class="my-4"> -->
+        {% if user.is_authenticated %}
+            <p class="lead">Hi {{ user.email }}!</p>
+            <a class="btn btn-primary" href="{% url 'account_logout' %}">Log Out</a>
+        {% else %}
+            <p class="lead">You are not logged in</p>
+            <p class="lead">
+                <a href="{% url 'account_login' %}">Log In</a>
+                or sign up <a href="{% url 'account_signup' %}">here</a>
+            </p>
+
+        {% endif %}
+        <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
+    </div>
+</div>
 
 
-{% if user.is_authenticated %}
-    <p>Hi {{ user.email }}!</p>
-    <p><a href="{% url 'account_logout' %}">Log Out</a></p>
-{% else %}
-    <p>You are not logged in</p>
-    <a href="{% url 'account_login' %}">Log In</a>
-    <a href="{% url 'account_signup' %}">Sign Up</a>
-{% endif %}
-
-{% endblock content %}
+{% endblock home %}
 
 
  
