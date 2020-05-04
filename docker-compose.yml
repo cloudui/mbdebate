@@ -7,6 +7,8 @@ services:
         environment: 
             - SECRET_KEY=c8tng6*b=h2xe^f1eor33+2v*!hnnt75wd@xgs48@ft=^4b)th
             - DEBUG=1
+            - EMAIL_HOST_USER=AKIAQVATNGL5LP3ZCPMN
+            - EMAIL_HOST_PASSWORD=BIZ/uFhv+wnS32qYNk2I2z/XSUl5QMFVmi76+Su/Pf+x
         volumes:
             - .:/code
         ports:
