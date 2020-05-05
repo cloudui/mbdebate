@@ -6,6 +6,6 @@ from .models import Tournament
 
 
 class TournamentAdmin(admin.ModelAdmin):
-    pass
+    prepopulated_fields = {'slug': ('name',)}
 
 admin.site.register(Tournament, TournamentAdmin)

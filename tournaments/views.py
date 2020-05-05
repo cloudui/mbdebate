@@ -13,3 +13,5 @@ class TournamentListView(ListView):
 class TournamentDetailView(DetailView):
     model = Tournament
     template_name = 'tournament_detail.html'
+
+    

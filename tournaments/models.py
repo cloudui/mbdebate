@@ -9,7 +9,10 @@ class Tournament(models.Model):
     name = models.CharField(max_length=255)
     date = models.CharField(max_length=10)
     cost = models.CharField(max_length=10)
-    link = models.CharField(max_length=50, default="")
+    link = models.CharField(max_length=50, null=True)
+    
+    slug = models.SlugField(null=False, unique=True, default=None)
+
     # date = models.DateTimeField(auto_now_add=True)
 
     # author = models.ForeignKey(

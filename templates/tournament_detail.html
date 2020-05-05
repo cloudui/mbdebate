@@ -1,0 +1,13 @@
+<!-- templates/article_detail.html -->
+
+{% extends '_base.html' %}
+
+{% block title %}Beegle{% endblock title %}
+
+{% block content %}
+    
+    <h1>{{ object.name }}</h1>
+    <p>Cost: ${{ object.cost }}</p>
+    <p>Link to website: <a href={{ object.link }}>Link</a></p>
+     
+{% endblock content %}

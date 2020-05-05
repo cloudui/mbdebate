@@ -7,7 +7,7 @@
 <h1>Tournament List</h1>
 {% for tournament in object_list %}
 <p>
-   {{ tournament.name }}
+   <a href="{% url 'detail' tournament.slug %}">{{ tournament.name }}</a>
 </p>
 {% endfor %}
 {% endblock content %}

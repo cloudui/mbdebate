@@ -24,7 +24,8 @@
         <!-- <li class="nav-item"><a class = "nav-link" href="#">Tournament List</a></li> -->
         {% url 'coaches' as coaches %}
         {% url 'about' as about %}
-        <li class="nav-item dropdown">
+        <li {% if 'tournaments' in request.path %} class="nav-item dropdown active" {% else %} class="nav-item dropdown" {% endif %}>
+          
          
           <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
             Tournaments
