@@ -1,0 +1,16 @@
+.jumbotron.jumbotron-fluid {
+    
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* width: 100%; */
+    /* height: 100% !important; */
+    height: 100vh;
+}
+
+.bg-cover {
+    background-attachment: static;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
