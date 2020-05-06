@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'allauth',
     'allauth.account',
+    'django_feather',
 
     # local
     'users.apps.UsersConfig',

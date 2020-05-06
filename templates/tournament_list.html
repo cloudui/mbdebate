@@ -4,10 +4,16 @@
 
 {% block content %}
 
-<h1>Tournament List</h1>
+
+     
 {% for tournament in object_list %}
 <p>
    <a href="{% url 'detail' tournament.slug %}">{{ tournament.name }}</a>
 </p>
+{% for user in tournament.users.all %}
+<p>
+   {{ user.email }}
+</p>
 {% endfor %}
+{% endfor %} 
 {% endblock content %}

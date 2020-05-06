@@ -1,0 +1,13 @@
+{% extends '_base.html' %}
+
+{% block title%}Tournament Unregister{% endblock title %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">Register</button>
+</form>
+     
+
+{% endblock content %}

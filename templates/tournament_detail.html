@@ -9,5 +9,7 @@
     <h1>{{ object.name }}</h1>
     <p>Cost: ${{ object.cost }}</p>
     <p>Link to website: <a href={{ object.link }}>Link</a></p>
-     
+    <p><a href="{% url 'register' object.slug %}">Register</a></p>
+    <p><a href="{% url 'unregister' object.slug %}">Unregister</a></p> 
+
 {% endblock content %}
