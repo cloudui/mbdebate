@@ -7,8 +7,8 @@ services:
         environment: 
             - SECRET_KEY=c8tng6*b=h2xe^f1eor33+2v*!hnnt75wd@xgs48@ft=^4b)th
             - DEBUG=1
-            - EMAIL_HOST_USER=AKIAQVATNGL5LP3ZCPMN
-            - EMAIL_HOST_PASSWORD=BIZ/uFhv+wnS32qYNk2I2z/XSUl5QMFVmi76+Su/Pf+x
+            - EMAIL_HOST_USER=apikey
+            - EMAIL_HOST_PASSWORD=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
         volumes:
             - .:/code
         ports:
@@ -20,7 +20,7 @@ services:
         volumes:
             - postgres_data:/var/lib/postgresql/data/
         environment: 
-            - "POSTGRES_HOST_AUTH_METHOD=trust"
+            - "POSTGRES_HOST_AUTH_METHOD=trust"django
     
 volumes:
     postgres_data:

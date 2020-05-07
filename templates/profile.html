@@ -7,15 +7,38 @@
 <h1>Profile</h1>
 {% if user.is_authenticated %}
 <p>Hi {{ user.email }}</p>
-<p>You are registered for:</p>
 
-<ul>
+
+
+{% if request.user.tournament_set.all %}
+<p class="lead">Registered Tournaments:</p>
 {% for tournament in request.user.tournament_set.all %}
-    <li>{{ tournament.name }}</li>
+    <div class="card">
+        <div class="card-header">
+            <span class="font-weight-bold"><a href="{% url 'detail' tournament.slug %}">{{ tournament.name }}</a></span> &middot;
+            <span class="text-muted">{{ tournament.date }}</span>
+    
+        </div>
+    
+        <div class="card-body">
+            <p>Registration fee: ${{ tournament.cost }}</p>
+    
+            
+            <!-- Comments added here -->     
+        </div>
+        <!-- <div class="card-footer">
+        <small><a href="{% url 'detail' tournament.slug %}">View details</a></small>
+        </div> -->
+    </div>
+    <br/>
 {% endfor %}
-</ul>
 {% else %}
-<p>Login please</p>
+<p class="lead">You aren't signed up for any tournaments. Sign up <a href="{% url 'fullregister' %}">here</a>.</p>
+{% endif %}
+
+{% else %}
+<h1>You are not logged in.</h1>
+<p><a href="{% url 'login' %}">Login</a></p>
 {% endif %}
 
 {% endblock content %}

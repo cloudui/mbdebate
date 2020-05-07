@@ -1,5 +1,7 @@
 from django import forms
 
+from django.forms import models as ble
+
 from .models import Tournament
 
 class TournamentRegistrationForm(forms.Form):
@@ -7,6 +9,11 @@ class TournamentRegistrationForm(forms.Form):
 
 class TournamentUnregisterForm(forms.Form):
     pass
+
+class MyMultipleModelChoiceField(ble.ModelMultipleChoiceField):
+
+    def label_from_instance(self, obj):
+        return f"{obj.name} | {obj.date}"
 
 class TournamentFullRegistrationForm(forms.Form):
     # add_check_each_tournament()
@@ -16,6 +23,7 @@ class TournamentFullRegistrationForm(forms.Form):
     #     ("DEU", "Germany"),
     #     ("NLD", "Neitherlands"),
     # )
-    Countries = forms.ModelMultipleChoiceField(queryset=Tournament.objects.all(),widget=forms.CheckboxSelectMultiple, required=False)
+    tournaments = MyMultipleModelChoiceField(queryset=Tournament.objects.all(), widget=forms.CheckboxSelectMultiple, required=False)
         
+
 

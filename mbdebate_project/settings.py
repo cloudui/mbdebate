@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'allauth',
     'allauth.account',
-    # 'django_feather',
+    'django_feather',
 
     # local
     'users.apps.UsersConfig',
@@ -187,7 +187,7 @@ ACCOUNT_UNIQUE_EMAIL = True # new
 DEFAULT_FROM_EMAIL = 'contact@echen.io'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'email-smtp.us-east-1.amazonaws.com'
+EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')

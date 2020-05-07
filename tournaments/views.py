@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from django.views.generic import ListView, DetailView, FormView
 
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from .forms import TournamentRegistrationForm, TournamentUnregisterForm, TournamentFullRegistrationForm
 
 from .models import Tournament
@@ -13,17 +13,28 @@ class TournamentListView(ListView):
     # login_url = 'login'
 
 class TournamentFullRegistrationView(ListView, FormView):
+    
     model = Tournament
     form_class = TournamentFullRegistrationForm
 
     template_name = "tournament_full_registration.html"
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('list')
+        
+    def form_valid(self, form):
+        form_results = form.cleaned_data['tournaments']
+        for tournament in form_results:
+            Tournament.register(self.request.user, tournament)
+
+        return super(TournamentFullRegistrationView, self).form_valid(form)
+        
+
 
 class TournamentDetailView(DetailView):
     model = Tournament
     template_name = 'tournament_detail.html'
 
-class TournamentRegistrationView(FormView):
+class TournamentRegistrationView(FormView, DetailView):
+    model = Tournament
     form_class = TournamentRegistrationForm
     template_name = 'tournament_registration.html'
     success_url = reverse_lazy('list')
@@ -35,13 +46,15 @@ class TournamentRegistrationView(FormView):
         Tournament.register(self.request.user, tourney)
         return super(TournamentRegistrationView, self).form_valid(form)
 
-class TournamentUnregisterView(FormView):
+class TournamentUnregisterView(FormView, DetailView):
+    model = Tournament
     form_class = TournamentUnregisterForm
     template_name = 'tournament_unregister.html'
     success_url = reverse_lazy('list')
     
 
     def form_valid(self, form):
+        
         tournament_slug = self.kwargs['slug']
         tourney = Tournament.objects.get(slug=tournament_slug)
         Tournament.unregister(self.request.user, tourney)

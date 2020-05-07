@@ -7,10 +7,20 @@
 
 {% block content %}
     <h1>Registration</h1>
-    <form method="post" id="mcform">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button class="btn btn-primary" type="submit">Register</button>
-    </form>
+    <p class="lead">Remember, every tournament you sign up for, you sign up your partner as well. Make sure you check with them beforehand. To see the list of tournament in more detail
+        go to <a href="{% url 'list' %}">tournament list</a>.
+    </p>
+    <p class="text-muted">You can also register tournaments individually by clicking on a specific tournament in the lists page.</p>
+
+    <br/>
+    <div class="card">
+        <div class="card-body">
+            <form method="post" id="mcform">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-primary" type="submit">Register</button>
+            </form>
+    </div>
+    </div>
     
 {% endblock content %}

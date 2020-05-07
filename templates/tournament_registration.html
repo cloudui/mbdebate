@@ -2,8 +2,9 @@
 
 {% block title%}Tournament Register{% endblock title %}
 
-{% block content %}
 
+{% block content %}
+<h1>Register for {{ object.name }}</h1>
 <form method="post">
     {% csrf_token %}
     <button class="btn btn-success" type="submit">Register</button>
