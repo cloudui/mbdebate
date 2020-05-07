@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, FormView
 
 from django.urls import reverse_lazy
-from .forms import TournamentRegistrationForm, TournamentUnregisterForm
+from .forms import TournamentRegistrationForm, TournamentUnregisterForm, TournamentFullRegistrationForm
 
 from .models import Tournament
 
@@ -11,6 +11,13 @@ class TournamentListView(ListView):
     model = Tournament
     template_name = 'tournament_list.html'
     # login_url = 'login'
+
+class TournamentFullRegistrationView(ListView, FormView):
+    model = Tournament
+    form_class = TournamentFullRegistrationForm
+
+    template_name = "tournament_full_registration.html"
+    success_url = reverse_lazy('home')
 
 class TournamentDetailView(DetailView):
     model = Tournament
@@ -39,3 +46,5 @@ class TournamentUnregisterView(FormView):
         tourney = Tournament.objects.get(slug=tournament_slug)
         Tournament.unregister(self.request.user, tourney)
         return super(TournamentUnregisterView, self).form_valid(form)
+
+

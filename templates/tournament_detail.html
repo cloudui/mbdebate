@@ -2,14 +2,26 @@
 
 {% extends '_base.html' %}
 
-{% block title %}Beegle{% endblock title %}
+{% block title %}{{ object.name }}{% endblock title %}
 
 {% block content %}
     
     <h1>{{ object.name }}</h1>
     <p>Cost: ${{ object.cost }}</p>
     <p>Link to website: <a href={{ object.link }}>Link</a></p>
-    <p><a href="{% url 'register' object.slug %}">Register</a></p>
-    <p><a href="{% url 'unregister' object.slug %}">Unregister</a></p> 
+    
 
+    {% if request.user in object.users.all %}
+        <p><a href="{% url 'unregister' object.slug %}">Unregister</a></p> 
+    {% else %}
+        <p><a href="{% url 'register' object.slug %}">Register</a></p>
+    {% endif %}
+    <br/>
+
+    <p class="lead">People signed up:</p>
+    <ul>
+    {% for user in object.users.all %}
+        <li>{{ user }}</li>
+    {% endfor %}
+    </ul>
 {% endblock content %}

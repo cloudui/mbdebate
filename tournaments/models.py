@@ -17,6 +17,9 @@ class Tournament(models.Model):
 
     users = models.ManyToManyField(CustomUser, blank=True)
 
+    def show_users(self):
+        return ', '.join([a.email for a in self.users.all()])
+
     @classmethod
     def register(cls, user, tournament):
         tournament.users.add(user)
