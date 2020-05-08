@@ -181,7 +181,11 @@ ACCOUNT_USERNAME_REQUIRED = False # new
 ACCOUNT_AUTHENTICATION_METHOD = 'email' # new
 ACCOUNT_EMAIL_REQUIRED = True # new
 ACCOUNT_UNIQUE_EMAIL = True # new
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
+ACCOUNT_FORMS = {
+    'signup': 'users.forms.CustomSignupForm'
+}
 
 # Email Credentials with Amazon SES
 DEFAULT_FROM_EMAIL = 'contact@echen.io'

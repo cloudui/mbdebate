@@ -18,10 +18,14 @@
     {% endif %}
     <br/>
 
+    {% if object.users.all %}
     <p class="lead">People signed up:</p>
     <ul>
     {% for user in object.users.all %}
         <li>{{ user }}</li>
     {% endfor %}
     </ul>
+    {% else %}
+    <p class="lead">No one has signed up yet.</p>
+    {% endif %}
 {% endblock content %}

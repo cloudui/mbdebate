@@ -13,7 +13,7 @@ class TournamentUnregisterForm(forms.Form):
 class MyMultipleModelChoiceField(ble.ModelMultipleChoiceField):
 
     def label_from_instance(self, obj):
-        return f"{obj.name} | {obj.date}"
+        return f"{obj.name} | {obj.date} - {obj.enddate}"
 
 class TournamentFullRegistrationForm(forms.Form):
     # add_check_each_tournament()
