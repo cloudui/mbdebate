@@ -6,9 +6,9 @@ services:
         # command: python /code/manage.py runserver 0.0.0.0:8000
         command: gunicorn bookstore_project.wsgi -b 0.0.0.0:8000 
         environment: 
-            - ENVIRONMENT=development
+            - ENVIRONMENT=production
             - SECRET_KEY=c8tng6*b=h2xe^f1eor33+2v*!hnnt75wd@xgs48@ft=^4b)th
-            - DEBUG=1
+            - DEBUG=0
             - EMAIL_HOST_USER=apikey
             - EMAIL_HOST_PASSWORD=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
         volumes:
@@ -19,11 +19,9 @@ services:
             - db
     db:
         image: postgres:11
-        volumes:
-            - postgres_data:/var/lib/postgresql/data/
+        
         environment: 
             - "POSTGRES_HOST_AUTH_METHOD=trust"
     
-volumes:
-    postgres_data:
+
         
