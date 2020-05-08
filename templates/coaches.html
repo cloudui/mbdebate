@@ -1,9 +1,42 @@
 {% extends '_base.html' %}
+{% load static %}
 
 {% block title%}Coaches{% endblock title %}
 
 {% block content %}
 
-<h1>Coaches</h1>
+<h1>Meet Our Coaches</h1>
+<br>
+<div class="card-deck">
+    <div class="card">
+      <img class="card-img-top" src="{% static 'images/bengoldberg.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Ben Goldberg</h5>
+        <p class="card-text">Ben is a rising junior at Cornell University. He debated for Half Hollow Hills High School, where he qualified
+            to the TOC in his senior year. Ben enjoys watching Netflix, sleeping, and listening to classical rock. He has expressed his distaste
+            towards quarantine. When asked about his feelings towards Mongtomery Blair, he said, "Blair is the best team on the planet and I love coaching them." 
+            He also clearly expressed his favoritism for the best debater on the team, Eric Chen. 
+
+        </p>
+        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="{% static 'images/davidkinane.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">David Kinane</h5>
+        <p class="card-text">David is a rising sophomore at the University of Michigan. He debated for Unionville High School,
+            and qualified to the TOC with a career total of 6 bids. He broke to eliminations at the TOC in his senior year, where he 
+            also won a speaker award. He enjoys listening to music, skateboarding, and surfing. In his free time, he cooks pineapples for breakfast
+            and boils ice cubes in the hot tub.
+        </p>
+        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+      </div>
+    </div>
+    
+    
+    
+   
+  </div>
 
 {% endblock content %}

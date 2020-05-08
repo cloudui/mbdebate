@@ -5,10 +5,16 @@
 
 {% block content %}
 <h1>Register for {{ object.name }}</h1>
+
+{% if user.is_authenticated %}
+<p class="lead">You are registering for {{ object.name }}. You will also sign up your partner.</p>
 <form method="post">
     {% csrf_token %}
     <button class="btn btn-success" type="submit">Register</button>
 </form>
-     
+{% else %}
+    <p class="lead">You are not logged in.</p>
+    <p>Log in <a href="{% url 'account_login' %}">here</a>.</p>
+{% endif %}
 
 {% endblock content %}
