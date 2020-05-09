@@ -27,5 +27,6 @@ urlpatterns = [
     # apps    
     path('', include('pages.urls')),
     path('accounts/', include('users.urls')), 
-    path('tournaments/', include('tournaments.urls'))
+    path('tournaments/', include('tournaments.urls')),
+    path('posts/', include('posts.urls')),
 ]

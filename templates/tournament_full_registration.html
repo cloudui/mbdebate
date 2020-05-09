@@ -7,7 +7,7 @@
 
 {% block content %}
     <h1>Registration</h1>
-    {% if user.is_authenticated %}
+    <!-- {% if user.is_authenticated %} -->
     <p class="lead">Remember, every tournament you sign up for, you sign up your partner as well. Make sure you check with them beforehand. To see the list of tournament in more detail
         go to <a href="{% url 'list' %}">tournament list</a>.
     </p>
@@ -24,9 +24,9 @@
     </div>
     </div>
 
-    {% else %}
+    <!-- {% else %}
     <p class="lead">You are not logged in.</p>
     <p>Log in <a href="{% url 'account_login' %}">here</a>.</p>
-    {% endif %}
+    {% endif %} -->
     
 {% endblock content %}

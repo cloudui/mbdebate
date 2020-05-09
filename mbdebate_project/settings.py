@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get('DEBUG', default=0))
 
-ALLOWED_HOSTS = ['mbdebate.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['mbdebate.com', 'localhost', '127.0.0.1', '0.0.0.0']
 
 
 # Application definition
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
     'tournaments.apps.TournamentsConfig',
+    'posts.apps.PostsConfig',
 ]
 
 MIDDLEWARE = [
