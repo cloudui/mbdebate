@@ -5,7 +5,7 @@
 {% block content %}
 
 <h1>Community Forum</h1>
-<a class="btn btn-outline-secondary" href="#" style="float: right;">+ Post</a>
+<a class="btn btn-outline-secondary" href="{% url 'post_new' %}" style="float: right;">+ Post</a>
 <br /> <br />
 
 {% for post in object_list reversed %}
@@ -14,14 +14,20 @@
             <span class="font-weight-bold">{{ post.title }}</span> &middot;
             <span class="text-muted">by {{ post.author.first_name }} {{ post.author.last_name }} |
             {{ post.date }}</span>
-
+            {% if post.edited %}
+            <span class="text-muted" style="float: right;">
+                (edited) at {{ post.date_updated }}
+            </span>
+            {% endif %}
         </div>
 
         <div class="card-body">
             <p>{{ post.body }}</p>
 
-            <a href="#">Edit</a> | 
+            {% if request.user == post.author %}
+            <a href="{% url 'post_edit' post.pk %}">Edit</a> | 
             <a href="{% url 'post_delete' post.pk %}">Delete</a>
+            {% endif %}
             <!-- Comments added here -->     
         </div>
         <div class="card-footer">

@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Post
@@ -36,6 +37,21 @@ class PostDeleteView(DeleteView):
     model = Post
     template_name = 'posts/post_delete.html'
     success_url = reverse_lazy('post_list')
+    login_url = 'account_login'
+
+    def dispatch(self, request, *args, **kwargs):
+        obj = self.get_object()
+        if obj.author != self.request.user:
+            raise PermissionDenied
+        return super().dispatch(request, *args, **kwargs)
+
+class PostUpdateView(UpdateView):
+
+    model = Post
+    template_name = 'posts/post_edit.html'
+    success_url = reverse_lazy('post_list')
+    fields = ('title', 'body')
+    
 
     def dispatch(self, request, *args, **kwargs):
         obj = self.get_object()
