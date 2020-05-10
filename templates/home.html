@@ -6,6 +6,7 @@
 {% block title %}Home{% endblock title %}
 
 {% block home %}
+
 <div class="jumbotron jumbotron-fluid text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('{% static 'images/background.png' %}')">
     <div class="container">
         <h1 class="display-1">Welcome to Montgomery Blair Debate</h1>
@@ -25,10 +26,48 @@
         {% endif %}
         <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
     </div>
+
 </div>
+
 
 
 {% endblock home %}
 
 
  
+{% block content %}
+<br>
+<h2 id="homepage-next" class="page-section-heading text-center text-uppercase mb-0">Quick Access</h2>
+<br><br><br>
+<div class="card-deck">
+    <div class="card">
+        <div class="card-header text-center">Upcoming Tournaments</div>
+        <div class="card-body">
+        
+        <p class="card-text">Ben is a rising junior at Cornell University. He debated for Half Hollow Hills High School, where he qualified
+            to the TOC in his senior year. Ben enjoys watching Netflix, sleeping, and listening to classical rock. He has expressed his distaste
+            towards quarantine. When asked about his feelings towards Mongtomery Blair, he said, "Blair is the best team on the planet and I love coaching them." 
+            He also clearly expressed his favoritism for the best debater on the team, Eric Chen. 
+
+        </p>
+        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+      </div>
+    </div>
+    <div class="card">
+     <div class="card-header text-center">Due Dates</div>
+      <div class="card-body">
+        
+        <p class="card-text">David is a rising sophomore at the University of Michigan. He debated for Unionville High School,
+            and qualified to the TOC with a career total of 6 bids. He broke to eliminations at the TOC in his senior year, where he 
+            also won a speaker award. He enjoys listening to music, skateboarding, and surfing. In his free time, he cooks pineapples for breakfast
+            and boils ice cubes in the hot tub.
+        </p>
+        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+      </div>
+    </div>
+    
+    
+    
+   
+  </div>
+{% endblock content %}

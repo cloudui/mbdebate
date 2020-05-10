@@ -15,4 +15,33 @@
     background-size: cover;
 }
 
-/* .dropdown-toggle { content: none } */
+.card-header a {
+    color: black
+}
+
+#mcform ul {
+    list-style-type: none;
+}
+
+#sticky-footer {
+    flex-shrink: none;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    /* height: 60px; */
+    /* line-height: 60px; */
+  }
+
+
+.divider{
+    width: 0px;
+    height:auto;
+    display:inline-block;
+}
+
+body {
+    min-height: 400px;
+    margin-bottom: 100px;
+    clear: both;
+}

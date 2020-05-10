@@ -11,15 +11,20 @@ class Tournament(models.Model):
     name = models.CharField(max_length=255)
     date = models.CharField(max_length=10, null=True)
     enddate = models.CharField(max_length=10, null=True)
-    cost = models.CharField(max_length=10, null=True)
+    cost = models.FloatField(null=True)
     link = models.CharField(max_length=50, null=True)
 
     location = models.CharField(max_length=50, null=True)
+    
+    is_payment_due = models.BooleanField(default=False)
+    
 
     
     slug = models.SlugField(null=False, unique=True, default=None)
 
-    users = models.ManyToManyField(CustomUser, blank=True)
+    users = models.ManyToManyField(CustomUser,blank=True) # through payment
+
+
 
 
     def show_users(self):
@@ -39,4 +44,13 @@ class Tournament(models.Model):
         return self.name
 
    
+
+# class Payment(models.Model):
+#     total_cost = models.FloatField(null=True)
+    
+#     transportation_cost = models.FloatField(null=True)
+
+#     lodging_cost = models.FloatField(null=True)
+
+#     registration_fee = models.FloatField(null=True)
 

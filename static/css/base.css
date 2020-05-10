@@ -8,6 +8,7 @@
     height: 100vh;
 }
 
+
 .bg-cover {
     background-attachment: static;
     background-position: center;
@@ -38,4 +39,15 @@
     width: 0px;
     height:auto;
     display:inline-block;
+}
+
+body {
+    min-height: 400px;
+    margin-bottom: 100px;
+    clear: both;
+}
+
+#homepage-next {
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
 }
