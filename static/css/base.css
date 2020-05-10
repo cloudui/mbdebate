@@ -34,6 +34,8 @@
   }
 
 
-.card-deck {
-    /* margin: */
+.divider{
+    width: 0px;
+    height:auto;
+    display:inline-block;
 }

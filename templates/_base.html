@@ -24,6 +24,7 @@
         <!-- <li class="nav-item"><a class = "nav-link" href="#">Tournament List</a></li> -->
         {% url 'coaches' as coaches %}
         {% url 'about' as about %}
+        {% url 'post_list' as posts %}
         <li {% if 'tournaments' in request.path %} class="nav-item dropdown active" {% else %} class="nav-item dropdown" {% endif %}>
           
          
@@ -40,6 +41,7 @@
         
         <li {% if request.path == coaches %} class="nav-item active" {% else %} class="nav-item" {% endif %}><a class = "nav-link" href="{% url 'coaches' %}">Coaches</a></li>
         <li {% if request.path == about %} class="nav-item active" {% else %} class="nav-item" {% endif %}><a class = "nav-link" href="{% url 'about' %}">About</a></li>
+        <li {% if request.path == posts %} class="nav-item active" {% else %} class="nav-item" {% endif %}><a class = "nav-link" href="{% url 'post_list' %}">Forum</a></li>
       </ul>
       <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarCollapse" aria-controls="navbarCollapse"

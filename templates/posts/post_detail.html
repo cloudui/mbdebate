@@ -1,33 +1,39 @@
 
 {% extends '_base.html' %}
+{% load icon %}
 
 {% block title %}{{ object.title }}{% endblock title %}
 
 {% block content %}
 
 <h1>{{ object.title }}</h1>
-<br>
 
 
-<div class="card">
-    <div class="card-header">
-        <span class="font-weight-bold">{{ post.title }}</span> &middot;
-        <span class="text-muted">by {{ post.author.first_name }} {{ post.author.last_name }} |
-        {{ post.date }}</span>
 
-    </div>
+<span class="text-muted">by {{ post.author.first_name }} {{ post.author.last_name }} |
+{{ post.date }}</span>
 
-    <div class="card-body">
-        <p>{{ post.body }}</p>
+{% if post.author == request.user %}
 
-        <a href="#">Edit</a> | 
-        <a href="#">Delete</a>
-        <!-- Comments added here -->     
-    </div>
-    <div class="card-footer">
-        hi
-    </div>
+<div style="float:right;">
+<a class= "btn btn-danger btn-sm" href="{% url 'post_delete' object.pk %}">{% icon 'trash-2' height="18" width="16" %} Delete</a>
+<!-- <div class="divider"></div> -->
+<a class="btn btn-outline-secondary btn-sm" href="{% url 'post_edit' object.pk %}">{% icon 'edit' height="18" width="16" %} Edit</a>  
 </div>
+<!-- <a style="float:right;" class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% icon 'settings' height="20" width="20" %}</a> -->
+{% endif %}
+
+
+<br><br>
+
+<p>{{ post.body }}</p>
+
+
+<br><br>
+
+<p>Back to <a href="{% url 'post_list' %}">All Posts</a>.</p>
+    
+
 
 
 {% endblock content %}
