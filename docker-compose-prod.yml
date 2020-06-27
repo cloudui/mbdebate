@@ -3,7 +3,7 @@ version: '3.7'
 services:
     web:
         build: .
-        command: gunicorn bookstore_project.wsgi -b 0.0.0.0:80 
+        command: gunicorn mbdebate_project.wsgi -b 0.0.0.0:80 
         environment:
             - ENVIRONMENT=production
             - SECRET_KEY=c8tng6*b=h2xe^f1eor33+2v*!hnnt75wd@xgs48@ft=^4b)th
