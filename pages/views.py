@@ -12,3 +12,6 @@ class AboutPageView(TemplateView):
 
 class CoachesPageView(TemplateView):
     template_name = 'coaches.html'
+
+class TemporaryTournament(TemplateView):
+    template_name = 'blairbebate.html'

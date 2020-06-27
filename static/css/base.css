@@ -24,16 +24,27 @@
     list-style-type: none;
 }
 
+.wrapper {
+    
+    min-height: calc(100vh - 80px);
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -35px; /* the bottom margin is the negative value of the footer's height */
+}
+#footer, .push {
+    height: 35px; /* .push must be the same height as .footer */
+}
 #sticky-footer {
     flex-shrink: none;
     position: fixed;
     bottom: 0;
     width: 100%;
+    z-index: 1000;
+    
 
     /* height: 60px; */
     /* line-height: 60px; */
-  }
-
+}
 
 .divider{
     width: 0px;

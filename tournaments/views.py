@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from django.views.generic import ListView, DetailView, FormView
+from django.views.generic import ListView, DetailView, FormView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.urls import reverse_lazy, reverse
@@ -61,5 +61,4 @@ class TournamentUnregisterView(LoginRequiredMixin, FormView, DetailView):
         tourney = Tournament.objects.get(slug=tournament_slug)
         Tournament.unregister(self.request.user, tourney)
         return super(TournamentUnregisterView, self).form_valid(form)
-
 

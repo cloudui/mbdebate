@@ -1,0 +1,62 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load icon %}
+
+{% block title %}Blair Bebate Site{% endblock title %}
+
+{% block content %}
+<h1>Welcome to the Blair Bebate Tournament</h1>
+
+<br>
+<p class="text-center"><a class="btn btn-outline-info" href="https://www.tabroom.com/index/tourn/index.mhtml?tourn_id=16482">Tabroom</a></p>
+<br>
+<div class="card-deck">
+    <div class="card">
+      <div class="card-header">Room 1</div>
+        <div class="card-body">
+          
+          <p class="card-text">Zoom link: <a href="https://us02web.zoom.us/j/87669693966?pwd=c1p3a0hEV3pDNnYzQ3ZCeWNIYVd6dz09">here</a></p>
+          {% icon 'heart' %}
+          {% icon 'heart' %}
+          {% icon 'heart' %}
+          {% icon 'heart' %}
+          {% icon 'heart' %}
+          {% icon 'heart' %}
+          {% icon 'heart' %}
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">Room 2</div>
+        <div class="card-body">
+          
+          <p class="card-text">Zoom link: <a href="https://us02web.zoom.us/j/84128682452?pwd=emduOExjOE52cU1HMk1YaWV0cEx0QT09">here</a></p>
+          {% icon 'truck' %}
+          {% icon 'truck' %}
+          {% icon 'truck' %}
+          {% icon 'truck' %}
+          {% icon 'truck' %}
+          {% icon 'truck' %}
+          {% icon 'truck' %}
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">Room 3</div>
+        <div class="card-body">
+         
+          <p class="card-text">Zoom link: <a href="https://us02web.zoom.us/j/88953130945?pwd=L0VmL3MvWHRiLytPc1dTa1lOaVZ3dz09">here</a></p>
+          {% icon 'coffee' %}
+          {% icon 'coffee' %}
+          {% icon 'coffee' %}
+          {% icon 'coffee' %}
+          {% icon 'coffee' %}
+        {% icon 'coffee' %}
+        {% icon 'coffee' %}
+          
+          
+        </div>
+      </div>
+          
+</div>
+<br><br>
+<img src="{% static 'images/dedede.png' %}" height="500px">
+{% endblock content %}

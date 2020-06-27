@@ -24,7 +24,7 @@ class Tournament(models.Model):
 
     users = models.ManyToManyField(CustomUser,blank=True) # through payment
 
-
+    
 
 
     def show_users(self):
