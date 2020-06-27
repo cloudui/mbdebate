@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get('DEBUG', default=0))
 
-ALLOWED_HOSTS = ['mbdebate.com', 'localhost', '127.0.0.1', '0.0.0.0', '52.69.164']
+ALLOWED_HOSTS = ['mbdebate.com', 'localhost', '127.0.0.1', '0.0.0.0', '52.69.164', '54.87.206.251', 'ec2-54-87-206-251.compute-1.amazonaws.com']
 
 
 # Application definition
